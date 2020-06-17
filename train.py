@@ -1,4 +1,5 @@
 import numpy
+import os
 import keras
 from keras.datasets import mnist
 from keras.models import Sequential
@@ -34,3 +35,9 @@ f= open("accuracy.txt","w+")
 f.write(str(accuracy))
 f.close()
 print("Accuracy is : " , accuracy ,"%")
+
+
+if(accuracy > 90):
+  os.system('python3 mail.py')
+else:
+  exit(0)
